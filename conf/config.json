@@ -1,0 +1,15 @@
+{
+  "sentinel":{
+  	"password": "123"
+  },
+  "keyboard_guard_config" : {
+    "bad_combos": [
+      {"combo": ["ctrl_l", "alt_l", "delete"]},
+      {"combo": ["cmd", "r"]}
+    ]
+  },
+  "task_manager_guard_config" : {
+    "exit_task": ["Taskmgr.exe", "notepad++.exe"],
+    "shut_down_any_new_task": false
+  }
+}
