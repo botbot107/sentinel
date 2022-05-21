@@ -7,9 +7,12 @@ from com.model.config import Config
 from com.service.keyboard_guard import KeyboardGuard
 from com.service.mouse_guard import MouseGuard
 from com.service.task_manager_guard import TaskManagerGuard
+from definitions import MEDIA_PATH
 
+SYSTEM_SOUND_ONLINE = 'coinwin.wav'
+SYSTEM_SOUND_OFFLINE = 'bassdrop.mp3'
 
-class Keyboard:
+class Sentinel:
 
     def __init__(self):
         self.__config: Config = ConfigHandler.instance().get()
@@ -42,13 +45,13 @@ class Keyboard:
                 self.__mouse_guard.start()
                 self.__keyboard_guard.start()
                 self.__task_manager_guard.start()
-                playsound('D:\\Users\\Giora\\PycharmProjects\\sentinel\\com\\listener\\coinwin.wav')
+                playsound(f'{MEDIA_PATH}{SYSTEM_SOUND_ONLINE}')
             else:
+                print('system off')
                 self.__mouse_guard.stop()
                 self.__keyboard_guard.stop()
                 self.__task_manager_guard.stop()
-                print('system off')
-                playsound('D:\\Users\\Giora\\PycharmProjects\\sentinel\\com\\listener\\bassdrop.mp3')
+                playsound(f'{MEDIA_PATH}{SYSTEM_SOUND_OFFLINE}')
             self.__online = not self.__online
             self.__reset_password()
         else:

@@ -1,6 +1,4 @@
-from com.listener.keyboard import Keyboard
-
+from com.service.sentinel import Sentinel
 
 if __name__ == "__main__":
-    Keyboard()
-
+    Sentinel()
