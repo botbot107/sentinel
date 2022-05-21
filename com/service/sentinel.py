@@ -30,7 +30,6 @@ class Sentinel:
         listener.join()  # remove if main thread is polling self.keys
 
     def __on_press(self, key):
-
 #        if key == keyboard.Key.esc:
 #            return False  # stop listener
         try:
